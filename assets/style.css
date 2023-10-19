@@ -1,0 +1,317 @@
+* {
+    scroll-behavior: smooth;
+    scroll-snap-align: center;
+    overflow-x: hidden;
+}
+
+section {
+    display: grid;
+    place-items: center;
+    align-content: center;
+    min-height: 100vh;   /* this is what allows room to scroll */
+    scroll-snap-align: start;
+}
+
+.hidden {
+    opacity: 0;
+    transition: all 1.5s; 
+    /* creates fade animation */
+    scroll-snap-align: start;
+}
+
+.show {
+    opacity: 1;
+}
+
+#section-1-p-1 {
+    font-size: 24px;
+    animation: fade-in 1s ease-out forwards;
+    animation-delay: 5s; /* delay the animation for 5 seconds */
+    opacity: 0; 
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+h1 {
+    font-size: 70px;
+    font-family: 'Bungee Shade', cursive;
+    white-space: nowrap; 
+    overflow: hidden; /* hide overflowed text */
+    text-indent: 100%; /* move the text out of view */
+    animation: write-text 4.5s steps(35) forwards;
+}
+
+@keyframes write-text {
+    from {
+        text-indent: 100%; /* move the text out of view */
+    }
+    to {
+        text-indent: 0%; /* move the text into view */
+    }
+}
+#section-1 {
+    background-image: url(../imgs/section-1-bckgrnd.jpg);
+    background-size: cover;
+}
+
+#section-1-r {
+    background-image: url(../imgs/section-1-bckground-2.jpg);
+    border: 2px solid black;
+    border-radius: 38%;
+    height: 400;
+    width: 560;
+    padding: 90px;
+    background-color: white;
+    opacity: 0.8;
+}
+
+#section-2 {
+    background-image: url(../imgs/section-2-bckgrnd.jpg);
+    background-size: cover;
+}
+
+#section-2-r {
+    background-image: url(../imgs/section-2-bckgrnd.jpg);
+    background-size: cover;
+    transform: scaleY(-1);
+}
+
+#section-3 {
+    display: flex;
+    background-image: url(../imgs/section-3-bckgrnd.jpg);
+    color: white;
+}
+
+#section-3-side-txt {
+    writing-mode: vertical-lr;
+    font-size: 120px;
+    font-family: 'Charmonman', cursive;
+}
+
+#section-4 {
+    background-color: rgba(11, 11, 11, 0.94);
+}
+
+.circle {
+    border: 3px solid black;
+    border-radius: 50%;
+    width: 250px;
+    height: 250px;
+    margin: 20px;
+    padding: 10px;
+}
+
+#circle-1 {
+    background-color:red;
+    opacity: .6;
+}
+
+#circle-2 {
+    background-color:blueviolet;
+    opacity: 0.7;
+}
+
+#circle-3 {
+    background-color: yellowgreen;
+    opacity: 0.8;
+}
+
+#circle-4 {
+    background-color: orange;
+    opacity: 0.9;
+}
+
+#circle-5 {
+    background-color: blue;
+    opacity: 1.2;
+}
+
+@keyframes scale-up {
+    0% {
+        transform: scaleY(1);
+    }
+    100% {
+        transform: scaleY(2);
+    }
+}
+
+#section-3-p-1 {
+    animation-name: scale-up;
+    animation-duration: 1.2s;
+    animation-fill-mode: forwards; /* keep the final state after animation ends */
+    margin: 25px;
+    opacity: 1.5;
+    font-family: 'IBM Plex Mono', monospace;
+}
+
+#section-3-p-2 {
+    animation-name: scale-up;
+    animation-duration: 1.3s;
+    animation-fill-mode: forwards; /* keep the final state after animation ends */
+    margin: 25px;
+    opacity: 1.5;
+    font-family: 'IBM Plex Mono', monospace;
+}
+
+#lion-gazelle-text {
+    font-family: 'Gaegu', cursive;
+}
+
+#section-4-text {
+    font-family: 'Tilt Prism', cursive;
+    color: white;
+    font-size: 55px;
+}
+
+#scroll-through-container {
+    color: white;
+    position: relative;
+    
+}
+
+.arrow {
+    font-size: 44px;
+}
+
+.arrow:hover {
+    cursor: pointer;
+    font-weight: bolder;
+}
+
+#section-5 {
+    animation: party-time 13s ease-in-out infinite;
+}
+
+@keyframes party-time {
+    0% {
+        background-color: red;
+    }
+    20% {
+        background-color: pink;
+    }
+    40% {
+        background-color: aquamarine;
+    }
+    60% {
+        background-color: greenyellow;
+    }
+    80% {
+        background-color: bisque
+    }
+    100% {
+        background-color: orange;
+    }
+}
+
+.img-container {
+    border: 3px double black;
+    padding: 5px;
+    width: 500px;
+    height: 300px;
+    background-color: transparent;
+    opacity: 1.3;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    text-align: justify;
+}
+/* custom scroll bar */
+.img-container::-webkit-scrollbar {
+    width: 10px;
+}
+
+.img-container::-webkit-scrollbar-track {
+    background-color: #f8c3f4af;
+}
+
+.img-container::-webkit-scrollbar-thumb {
+    background-color: rgb(122, 120, 120);
+    border-radius: 7px;
+}
+
+.img-container::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+}
+
+#human-nature-slide img {
+    max-width: 100%;
+    opacity: 1.3;
+} 
+
+#nature-slide img {
+    max-width: 100%;
+    opacity: 1.4;
+}
+
+#section-6 {
+    background-image: url(../imgs/possible-section-6.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.7;
+}
+
+#section-6 h2 {
+    font-family: 'Bungee Shade', cursive;
+    font-size: 63px;
+    opacity: 1.4;
+}
+
+#section-7 {
+    background-image: url(../imgs/section-7-bckgrnd-2.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.8;
+}
+
+#bubble-section-7 {
+    border: 2px solid black;
+    border-radius: 38%;
+    height: 400;
+    width: 560;
+    padding: 90px;
+    background-color: whitesmoke;
+    opacity: 0.8;
+}
+
+@keyframes poem-animation {
+    from {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0%);
+    }
+}
+
+.nature-poem {
+    text-align: center;
+    font-family: 'Gaegu', cursive;
+    font-weight: bolder;
+    animation: poem-animation 1s forwards linear;
+}
+
+.nature-poem u {
+    font-size: 40px;
+} 
+
+#name-text {
+    font-family: 'League Script', cursive;
+    font-weight: bold;
+    font-size: 23px;
+}
+
+#section-8 {
+    background-image: url(../imgs/section-7-bckgrnd.jpg);
+    background-repeat: no-repeat;
+    background-color: rgba(0, 0, 0, 0.973);
+    background-position: center center;
+}
